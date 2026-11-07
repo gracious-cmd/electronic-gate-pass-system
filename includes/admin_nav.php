@@ -1,0 +1,1 @@
+<aside class="sidebar"><a href="dashboard.php">Dashboard</a><a href="visitors.php">Visitors</a><a href="approvals.php">Approvals</a><a href="employees.php">Employees</a><a href="gate-passes.php">Gate passes</a><a href="reports.php">Reports</a></aside>

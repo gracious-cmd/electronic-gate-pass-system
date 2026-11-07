@@ -1,0 +1,4 @@
+<?php
+require_once __DIR__.'/../config/database.php';require_once __DIR__.'/../includes/functions.php';require_role(['security','admin']);
+$inside=(int)$conn->query("SELECT COUNT(*) n FROM visitors WHERE entry_time IS NOT NULL AND exit_time IS NULL")->fetch_assoc()['n'];
+$pageTitle='Security Desk';require '../includes/header.php';?><div class="layout"><aside class="sidebar"><a href="dashboard.php">Security desk</a><a href="entry.php">Record entry</a><a href="exit.php">Record exit</a></aside><section class="content"><h1>Security desk</h1><p class="muted">Verify approved passes before recording access.</p><div class="stats"><div class="stat"><span>Visitors currently inside</span><strong><?=$inside?></strong></div></div><div class="actions"><a class="btn" href="entry.php">Record visitor entry</a><a class="btn secondary" href="exit.php">Record visitor exit</a></div></section></div><?php require '../includes/footer.php';?>

@@ -1,0 +1,4 @@
+<?php
+require_once __DIR__.'/../config/database.php';require_once __DIR__.'/../includes/functions.php';require_role(['admin']);
+$res=$conn->query("SELECT status,COUNT(*) total FROM visitors GROUP BY status");
+$pageTitle='Reports';require '../includes/header.php';?><div class="layout"><?php require '../includes/admin_nav.php';?><section class="content"><h1>Visitor reports</h1><div class="panel"><h2>Requests by status</h2><div class="stats"><?php while($r=$res->fetch_assoc()):?><div class="stat"><span><?=e(ucfirst($r['status']))?></span><strong><?=$r['total']?></strong></div><?php endwhile;?></div><p class="muted">For a detailed record list, use the Visitors page. This report reflects records currently stored in the database.</p></div></section></div><?php require '../includes/footer.php';?>

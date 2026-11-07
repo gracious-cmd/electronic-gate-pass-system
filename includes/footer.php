@@ -1,0 +1,1 @@
+</main><footer class="footer">Electronic Security Gate Pass Management System · <?=date('Y')?></footer><script src="/electronic-gate-pass/assets/js/script.js"></script></body></html>
